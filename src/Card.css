@@ -1,0 +1,141 @@
+.cardContainer {
+  width: 347px;
+  height: 221px;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0px 4px 54.9 #65656540;
+  position: relative;
+}
+
+.cardContainer .cardSide {
+  position: absolute;
+  width: 347px;
+  height: 221px;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  box-sizing: border-box;
+  border-radius: 12px;
+}
+
+.cardContainer .cardFront {
+  background-color: #252525;
+  border: 1px solid #414141;
+  justify-content: space-evenly;
+}
+
+.cardContainer .cardFront .cardQuestionNumber {
+  align-self: center;
+  font-size: 12px;
+  color: #c9c9c9;
+  font-weight: 500;
+  padding-bottom: 9px;
+}
+
+.cardContainer .cardFront .cardQuestionText {
+  font-size: 24px;
+  font-weight: 600;
+  margin: -12px;
+  color: #ffffff;
+  line-height: 129%;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.cardContainer .cardFront .cardDifficultyBadge {
+  align-self: center;
+}
+
+.cardContainer .cardBack {
+  background-color: #252525;
+  border: 1px solid #ffd6a8;
+  justify-content: left;
+  align-items: left;
+  text-align: left;
+  opacity: 0;
+  z-index: 1;
+}
+
+.cardContainer .cardBack .cardDifficultyBadge {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  align-self: initial;
+}
+
+.cardContainer .cardBack .cardQuestionTextOnBack {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 129%;
+  margin-bottom: 16px;
+  margin-left: -8px;
+}
+
+.cardContainer .cardBack .cardAnswerLabel {
+  font-size: 12px;
+  color: #c9c9c9;
+  font-weight: 500;
+  margin-bottom: -6px;
+  margin-top: -8px;
+  margin-left: -8px;
+}
+
+.cardContainer .cardBack .cardAnswerText {
+  color: #bababa;
+  font-size: 16px;
+  line-height: 129%;
+  font-weight: 500;
+  margin: 0;
+  padding-left: 4px;
+  margin-top: -4px;
+  letter-spacing: 0;
+  margin-left: -8px;
+}
+
+.cardContainer .cardDifficultyBadge {
+  padding: 3px 18px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600px;
+}
+
+.cardContainer .difficultyEasy {
+  background-color: #223851;
+  color: #4eedff;
+  border: 1px solid #97e3ff;
+  padding-left: 26px;
+  padding-right: 26px;
+  font-size: 12px;
+}
+
+.cardContainer .difficultyHard {
+  background-color: #522727;
+  color: #ffaeae;
+  border: 1px solid #ff9797;
+  padding-left: 26px;
+  padding-right: 26px;
+  font-size: 12px;
+}
+
+.cardContainer .difficultyMedium {
+  background-color: #4a422f;
+  color: #f9cdad;
+  border: 1px solid #ffce97;
+  padding-left: 26px;
+  padding-right: 26px;
+  font-size: 12px;
+}
+
+.cardContainer.flipped .cardFront {
+  opacity: 0;
+  z-index: 1;
+}
+
+.cardContainer.flipped .cardBack {
+  opacity: 1;
+  z-index: 2;
+}
