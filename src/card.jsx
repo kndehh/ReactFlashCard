@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import "./Card.css";
 
-export default function Card({ question, answer, difficulty }) {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  const toggleFlip = () => {
-    setIsFlipped(!isFlipped);
-  };
-
+export default function Card({
+  question,
+  answer,
+  difficulty,
+  cardIndex,
+  selectedCardIndex,
+  toggleFlip,
+}) {
   const getDifficultyClass = (diff) => {
     const lowerDiff = diff ? diff.toLowerCase() : "";
     switch (lowerDiff) {
@@ -24,7 +25,9 @@ export default function Card({ question, answer, difficulty }) {
 
   return (
     <div
-      className={`cardContainer ${isFlipped ? "flipped" : ""}`}
+      className={`cardContainer ${
+        cardIndex === selectedCardIndex ? "flipped" : ""
+      }`}
       onClick={toggleFlip}
     >
       <div className="cardSide cardFront">

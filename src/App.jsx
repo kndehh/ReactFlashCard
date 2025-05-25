@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react"; //ditaro di app.jsx tambahin di app jsx usestate selectedcard, usestate index buat passing tambahin selected card index, statenya if current index = seletedcard index
 import Card from "./card.jsx";
 import reactLogo from "./assets/react.svg";
 
 export default function App() {
+  const [selectedCard, setSelectedCard] = useState(null);
   const cardData = [
     {
       cardId: 1,
@@ -71,7 +72,11 @@ export default function App() {
       difficulty: "Medium",
     },
   ];
-
+  function toggleFlip(cardIndex) {
+    setSelectedCard((prevIndex) =>
+      prevIndex === cardIndex ? null : cardIndex
+    );
+  }
   return (
     <div className="App">
       <div className="mainContentWrapper">
@@ -90,6 +95,9 @@ export default function App() {
               question={card.question}
               answer={card.answer}
               difficulty={card.difficulty}
+              selectedCardIndex={selectedCard}
+              cardIndex={card.cardId}
+              toggleFlip={() => toggleFlip(card.cardId)}
             />
           ))}
         </div>
